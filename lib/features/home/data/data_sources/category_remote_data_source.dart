@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:dummy_full_with_clean/features/home/data/models/category_model.dart';
-import 'package:dummy_full_with_clean/features/home/data/models/product_model.dart';
 
 abstract class CategoryRemoteDataSource{
   Future<List<CategoryModel>> getCategories();

@@ -1,11 +1,12 @@
 import 'package:dummy_full_with_clean/features/home/presentation/manager/category_manager/category_state.dart';
+import 'package:dummy_full_with_clean/features/home/presentation/pages/add_page.dart';
 import 'package:dummy_full_with_clean/features/home/presentation/pages/search_products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/entities/category.dart';
 import '../../domain/entities/product.dart';
 import '../manager/category_manager/category_provider.dart';
-import '../manager/product_manager/product_provider.dart';
+import '../manager/product_provider.dart';
 import '../manager/product_manager/product_state.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -157,7 +158,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                 ),
         ],
       ),
-
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> AddPage()));
+      },child: Icon(Icons.add),),
     );
   }
 }

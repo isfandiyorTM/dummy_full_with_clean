@@ -40,11 +40,15 @@ class ProductModel extends Product {
       brand: json['brand'] as String?,
       sku: json['sku'] as String?,
       weight: (json['weight'] as num?)?.toDouble(),
-      dimensions: json['dimensions'] != null ? Dimensions.fromJson(json['dimensions']) : null,
+      dimensions:
+          json['dimensions'] != null
+              ? Dimensions.fromJson(json['dimensions'])
+              : null,
       warrantyInformation: json['warrantyInformation'] as String?,
       shippingInformation: json['shippingInformation'] as String?,
       availabilityStatus: json['availabilityStatus'] as String?,
-      reviews: (json['reviews'] as List?)?.map((e) => Review.fromJson(e)).toList(),
+      reviews:
+          (json['reviews'] as List?)?.map((e) => Review.fromJson(e)).toList(),
       returnPolicy: json['returnPolicy'] as String?,
       minimumOrderQuantity: json['minimumOrderQuantity'] as int?,
       meta: json['meta'] != null ? Meta.fromJson(json['meta']) : null,

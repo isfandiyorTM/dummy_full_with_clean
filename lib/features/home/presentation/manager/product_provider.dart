@@ -1,12 +1,14 @@
+import 'package:dummy_full_with_clean/features/home/presentation/manager/add_product/add_product_notifier.dart';
 import 'package:dummy_full_with_clean/features/home/presentation/manager/product_manager/product_notifier.dart';
 import 'package:dummy_full_with_clean/features/home/presentation/manager/product_manager/product_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dio/dio.dart';
 
-import '../../../data/data_sources/product_remote_data_source.dart';
-import '../../../data/repositories/product_repository_impl.dart';
-import '../../../domain/repositories/product_repository.dart';
-import '../../../domain/use_cases/product_usecase.dart';
+import '../../data/data_sources/product_remote_data_source.dart';
+import '../../data/repositories/product_repository_impl.dart';
+import '../../domain/repositories/product_repository.dart';
+import '../../domain/use_cases/product_usecase.dart';
+import 'add_product/add_product_state.dart';
 
 // Dio instance provider
 final dioProvider = Provider<Dio>((ref) => Dio());
@@ -49,4 +51,10 @@ StateNotifierProvider<SearchProductsNotifier, ProductState>((ref) {
 final categoryProductsNotifierProvider =
 StateNotifierProvider<CategoryProductsNotifier, ProductState>((ref) {
   return CategoryProductsNotifier(productUseCase: ref.watch(productUseCaseProvider));
+});
+
+// AddProduct Provider
+final addProductNotifierProvider =
+StateNotifierProvider<AddProductNotifier, AddProductState>((ref) {
+  return AddProductNotifier(productUseCase: ref.watch(productUseCaseProvider));
 });

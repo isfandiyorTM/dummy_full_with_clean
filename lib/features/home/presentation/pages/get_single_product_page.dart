@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/entities/product.dart';
-import '../manager/product_manager/product_provider.dart';
+import '../manager/product_provider.dart';
 import '../manager/product_manager/product_state.dart';
 import '../widgets/product_widget.dart';
 

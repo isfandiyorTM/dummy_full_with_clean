@@ -26,27 +26,27 @@ class Product {
 
   Product({
     this.id,
-    this.title,
-    this.description,
-    this.category,
-    this.price,
-    this.discountPercentage,
-    this.rating,
-    this.stock,
-    this.tags,
-    this.brand,
-    this.sku,
-    this.weight,
-    this.dimensions,
-    this.warrantyInformation,
-    this.shippingInformation,
-    this.availabilityStatus,
-    this.reviews,
-    this.returnPolicy,
-    this.minimumOrderQuantity,
-    this.meta,
-    this.thumbnail,
-    this.images,
+    required this.title,
+    required this.description,
+    required this.category,
+    required this.price,
+    required this.discountPercentage,
+    required this.rating,
+    required this.stock,
+    required this.tags,
+    required this.brand,
+    required this.sku,
+    required this.weight,
+    required this.dimensions,
+    required  this.warrantyInformation,
+    required   this.shippingInformation,
+    required this.availabilityStatus,
+    required this.reviews,
+    required  this.returnPolicy,
+    required  this.minimumOrderQuantity,
+    required  this.meta,
+    required  this.thumbnail,
+    required  this.images,
   });
 
 }
@@ -56,7 +56,7 @@ class Dimensions {
   final double? height;
   final double? depth;
 
-  Dimensions({this.width, this.height, this.depth});
+  Dimensions({required this.width,required this.height,required this.depth});
 
   factory Dimensions.fromJson(Map<String, dynamic> json) {
     return Dimensions(
@@ -81,7 +81,7 @@ class Review {
   final String? reviewerName;
   final String? reviewerEmail;
 
-  Review({this.rating, this.comment, this.date, this.reviewerName, this.reviewerEmail});
+  Review({required this.rating,required this.comment,required this.date,required this.reviewerName,required this.reviewerEmail});
 
   factory Review.fromJson(Map<String, dynamic> json) {
     return Review(
@@ -109,7 +109,7 @@ class Meta {
   final String? barcode;
   final String? qrCode;
 
-  Meta({this.createdAt, this.updatedAt, this.barcode, this.qrCode});
+  Meta({required this.createdAt, required this.updatedAt,required this.barcode, required this.qrCode});
 
   factory Meta.fromJson(Map<String, dynamic> json) {
     return Meta(
